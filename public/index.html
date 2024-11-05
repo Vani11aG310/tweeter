@@ -11,7 +11,7 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     
@@ -27,12 +27,21 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
-      <div>
+      <span class="nav-title">tweeter</span>
+      <div class="nav-tweet-btn">
         <p><strong>Write</strong> a new tweet</p>
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
+    <header>
+      <div>
+        <img src="/images/profile-hex.png">
+      </div>
+      <br>
+      <div>
+        <h2>Angelo Villanueva</h2>
+      </div>
+    </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container"></main>

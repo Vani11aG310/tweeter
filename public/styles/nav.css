@@ -2,9 +2,11 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
   height: 120px;
   width: 100%;
-  align-content: center;
+  align-items: center;
   padding-left: 1.5em;
   padding-right: 1.5em;
   background-color: #4056A1;
@@ -12,24 +14,23 @@ nav {
 }
 
 nav span {
-  align-content: center;
+  align-items: center;
   font-family: 'Bungee', sans-serif;
   font-size: 32px;
 }
 
 nav p {
   margin-bottom: 0;
-  padding-top: 23px;
 }
 
 nav div {
   display: flex;
+  align-items: center;
   flex-direction: column;
   margin-bottom: 0;
 }
 
 i.fa-solid {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   color: red;
 }
