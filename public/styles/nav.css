@@ -1,0 +1,35 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 120px;
+  width: 100%;
+  align-content: center;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
+
+nav span {
+  align-content: center;
+  font-family: 'Bungee', sans-serif;
+  font-size: 32px;
+}
+
+nav p {
+  margin-bottom: 0;
+  padding-top: 23px;
+}
+
+nav div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+i.fa-solid {
+  display: flex;
+  justify-content: center;
+  color: red;
+}
