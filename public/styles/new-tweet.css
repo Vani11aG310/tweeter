@@ -17,10 +17,15 @@ textarea {
   outline: none;
   border-bottom: 4px solid black;
   width: 100%;
+  padding: 20px;
 }
 div {
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
   font-family: 'Bungee', sans-serif;
+}
+
+button:hover {
+  border: #FFFFFF;
 }
