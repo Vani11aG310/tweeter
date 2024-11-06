@@ -33,7 +33,7 @@ createTweetElement = function(tweet) {
 renderTweets = function(tweets) {
   for (const tweet of tweets) {
     const newTweet = createTweetElement(tweet);
-    $('.tweet-library').append(newTweet);
+    $('.tweet-library').prepend(newTweet);
   }
 }
 
