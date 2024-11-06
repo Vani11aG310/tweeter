@@ -23,6 +23,15 @@ article.tweet header {
   padding: 1em;
 }
 
+div.user {
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+div.user span {
+  display: flex;
+  align-items: center;
+}
+
 article.tweet p {
   text-align: start;
   border-bottom: 4px solid black;
@@ -42,7 +51,7 @@ article.tweet footer {
   padding-right: 2.5em;
 }
 
-article.tweet i {
+.tweet i {
   color: black;
   padding: 0.5em;
 }
@@ -66,7 +75,7 @@ article.tweet footer i:hover {
   color: darkgoldenrod;
 }
 
-section.icons {
+section.tweet-icons {
   width: 5%;
   display: flex;
   flex-direction: row;

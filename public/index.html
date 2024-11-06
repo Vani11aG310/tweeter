@@ -17,10 +17,21 @@
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     
-
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" defer>
+      $('.tweet-form').on('submit', function(event) {
+        event.preventDefault();
+        const formData = $(this).serialize();
+        $.ajax({
+          type: "POST",
+          url: "/tweets",
+          data: formData
+        })
+      })
+    </script>
+    <script type="text/javascript" src="/scripts/client.js" defer></script>
+    
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,7 +61,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets/">
+        <form method="POST" action="/tweets/" class="tweet-form">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div>
@@ -59,21 +70,6 @@
           </div>
         </form>
         <section class="tweet-library">
-          <article class="tweet">
-            <header>
-              <span><i class="fa-solid fa-user-astronaut"></i>Angelo</span>
-              <span style="color:darkgrey">@mankey</span>
-            </header>
-            <p>If I have seen further it is by standing on the shoulders of giants</p>
-            <footer>
-              <span>10 days ago</span>
-              <section class="icons">
-                <i class="fa-solid fa-flag"></i>
-                <i class="fa-sharp fa-solid fa-retweet"></i>
-                <i class="fa-sharp fa-solid fa-heart"></i>
-              </section>
-            </footer>
-          </article>
         </section>
       </section>
     </main>
