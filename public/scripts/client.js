@@ -5,7 +5,31 @@
  */
 
 $(document).ready( function() {
-  createTweetElement = function(tweet) {
+  $('.tweet-form').on('submit', function(event) {
+    let valid = true;
+    let errorMessage;
+    if ($('.tweet-form').val() === "") {
+      valid = false;
+      errorMessage = "Tweet cannot be empty.";
+    }
+    if (Number($('.counter').text()) < 0) {
+      valid = false;
+      errorMessage = "Your tweet is too long!";
+    }
+    event.preventDefault();
+    const formData = $(this).serialize();
+    if (!valid && errorMessage) {
+      alert(errorMessage);
+    } else {
+      $.ajax({
+        type: "POST",
+        url: "/tweets",
+        data: formData
+      })
+    }
+  })
+
+  function createTweetElement(tweet) {
     const dateCreated = tweet.created_at
     const $tweet = $(`
       <article class="tweet">
@@ -30,16 +54,20 @@ $(document).ready( function() {
     return $tweet;
   }
   
-  renderTweets = function(tweets) {
+  function renderTweets(tweets) {
+    $('.tweet-library').empty();
     for (const tweet of tweets) {
       const newTweet = createTweetElement(tweet);
       $('.tweet-library').prepend(newTweet);
     }
   }
 
-  loadTweets = function() {
-    $.get('/tweets', function(data) {
-      renderTweets(data)
+  function loadTweets() {
+    $.ajax('/tweets', {
+      method: 'GET'
+    })
+    .then(function(data) {
+      renderTweets(data);
     })
   }
 
