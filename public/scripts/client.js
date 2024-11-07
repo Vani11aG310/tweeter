@@ -44,19 +44,24 @@ $(document).ready( function() {
   }
 
   function createTweetElement(tweet) {
-    const dateCreated = tweet.created_at
+    const dateCreated = timeago.format(escape(tweet.created_at));
+    const text = escape(tweet.content.text);
+    const handle = escape(tweet.user.handle);
+    const name = escape(tweet.user.name);
+    const avatarURL = escape(tweet.user.avatars)
+   
     const $tweet = $(`
       <article class="tweet">
         <header>
           <div class="user">
-            <img src=${tweet.user.avatars}>
-            <span>${tweet.user.name}</span>
+            <img src=${avatarURL}>
+            <span>${name}</span>
           </div>
-          <span style="color:darkgrey">${tweet.user.handle}</span>
+          <span style="color:darkgrey">${handle}</span>
         </header>
-        <p>${tweet.content.text}</p>
+        <p>${text}</p>
         <footer>
-          <span>${timeago.format(dateCreated)}</span>
+          <span>${dateCreated}</span>
           <section class="tweet-icons">
             <i class="fa-solid fa-flag"></i>
             <i class="fa-sharp fa-solid fa-retweet"></i>
@@ -83,6 +88,12 @@ $(document).ready( function() {
     .then(function(data) {
       renderTweets(data);
     })
+  }
+
+  function escape(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
   }
 
   loadTweets();
