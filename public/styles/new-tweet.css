@@ -27,5 +27,5 @@ div {
 }
 
 button:hover {
-  border: #FFFFFF;
+  border: 2px solid skyblue;
 }

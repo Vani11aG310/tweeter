@@ -19,8 +19,10 @@ $(document).ready( function() {
         type: "POST",
         url: "/tweets",
         data: formData,
-        success: function() {
+        success: function () {
           $('#tweet-text').val("");
+          $('.counter').text('140')
+          loadTweets();
         }
       })
     }
