@@ -16,8 +16,7 @@ html {
 
 body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
@@ -29,8 +28,15 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- main {
+main {
   text-align: center;
   width: 90%;
   background-color: inherit;
- }
+  margin: 5%;
+}
+
+@media only screen and (max-width: 1024px) {
+  body {
+    flex-direction: column;
+  }
+}

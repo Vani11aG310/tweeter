@@ -44,40 +44,32 @@ article.tweet p {
 article.tweet footer {
   display: flex;
   justify-content: space-between;
-  height: 40px;
   width: 100%;
   font-size: medium;
-  padding-left: 2.5em;
-  padding-right: 2.5em;
 }
 
 .tweet i {
-  color: black;
-  padding: 0.5em;
+  color: darkslateblue;
+  margin: 5%;
 }
 
 article.tweet footer div {
-  display: flex;
+  display: block;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0;
 }
 
 article.tweet footer span {
   padding-top: 7px;
+  padding-bottom: 7px;
+  margin-left: 3%;
 }
 
-article.tweet footer i {
-  color: darkslateblue;
-}
-
-article.tweet footer i:hover {
+.tweet i:hover {
   color: darkgoldenrod;
 }
 
 section.tweet-icons {
-  width: 5%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  width: 20%;
+  display: block;
 }
