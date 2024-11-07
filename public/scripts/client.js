@@ -6,28 +6,40 @@
 
 $(document).ready( function() {
   $('.tweet-form').on('submit', function(event) {
-    let valid = true;
-    let errorMessage;
-    if ($('.tweet-form').val() === "") {
-      valid = false;
-      errorMessage = "Tweet cannot be empty.";
-    }
-    if (Number($('.counter').text()) < 0) {
-      valid = false;
-      errorMessage = "Your tweet is too long!";
-    }
+    const tweet = $('#tweet-text').val();
+    const trimmedTweet = tweet.trim()
+    const validation = isTweetValid(trimmedTweet)
     event.preventDefault();
-    const formData = $(this).serialize();
-    if (!valid && errorMessage) {
-      alert(errorMessage);
+    if (!validation.valid && validation.errorMessage) {
+      alert(validation.errorMessage);
     } else {
+      $('#tweet-text').val(trimmedTweet);
+      const formData = $(this).serialize();
       $.ajax({
         type: "POST",
         url: "/tweets",
-        data: formData
+        data: formData,
+        success: function() {
+          $('#tweet-text').val("");
+        }
       })
     }
   })
+
+  function isTweetValid(tweet) {
+    let valid = true;
+    let errorMessage;
+    if (tweet === "") {
+      valid = false;
+      errorMessage = "Tweet cannot be empty.";
+    }
+    if (tweet.length > 140) {
+      valid = false;
+      errorMessage = "Your tweet is too long!";
+    }
+
+    return { valid, errorMessage }; 
+  }
 
   function createTweetElement(tweet) {
     const dateCreated = tweet.created_at
