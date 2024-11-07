@@ -29,3 +29,14 @@ div {
 button:hover {
   border: 2px solid skyblue;
 }
+
+#er {
+  justify-content: center;
+  padding-left: 1%;
+  padding-bottom: 10px;
+  color: red;
+  font-family: "Source Sans 3", sans-serif;
+  width: 100%;
+  border: 5px solid red;
+  margin-top: 20px;
+}

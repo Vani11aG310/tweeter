@@ -11,8 +11,10 @@ $(document).ready( function() {
     const validation = isTweetValid(trimmedTweet)
     event.preventDefault();
     if (!validation.valid && validation.errorMessage) {
-      alert(validation.errorMessage);
+      $('#er').html(`<i class="fa-solid fa-triangle-exclamation"></i> ${validation.errorMessage} <i class="fa-solid fa-triangle-exclamation"></i>`);
+      $('#er').slideDown("fast", function() {});
     } else {
+      $('#er').slideUp("fast", function() {});
       $('#tweet-text').val(trimmedTweet);
       const formData = $(this).serialize();
       $.ajax({
@@ -33,11 +35,11 @@ $(document).ready( function() {
     let errorMessage;
     if (tweet === "") {
       valid = false;
-      errorMessage = "Tweet cannot be empty.";
+      errorMessage = "Much wow, much empty! Tweet cannot be empty";
     }
     if (tweet.length > 140) {
       valid = false;
-      errorMessage = "Your tweet is too long!";
+      errorMessage = "Your tweet is too long. Please keep it within our character limit of 140";
     }
 
     return { valid, errorMessage }; 
