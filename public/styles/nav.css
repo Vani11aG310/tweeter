@@ -36,7 +36,7 @@ i.fa-solid {
 }
 
 @media only screen and (max-width: 1024px) {
-  nav{
+  nav {
     background-color: rgba(255, 141, 2, 0.781);
     background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   }

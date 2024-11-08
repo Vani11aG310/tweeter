@@ -24,7 +24,9 @@ article.tweet header {
 }
 
 div.user {
-  font-family: 'Source Sans 3', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
 }
 
 div.user span {

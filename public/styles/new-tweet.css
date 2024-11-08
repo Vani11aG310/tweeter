@@ -2,15 +2,18 @@ button {
   background-color: #4056A1;
   color: #FFFFFF;
 }
+
 form {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
 }
+
 label {
   width: 100%;
   text-align: start;
 }
+
 textarea {
   background-color: transparent;
   border: none;
@@ -19,7 +22,8 @@ textarea {
   width: 100%;
   padding: 20px;
 }
-div {
+
+.form-submit {
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
@@ -32,6 +36,7 @@ button:hover {
 
 #er {
   justify-content: center;
+  padding-top: 10px;
   padding-left: 1%;
   padding-bottom: 10px;
   color: red;
